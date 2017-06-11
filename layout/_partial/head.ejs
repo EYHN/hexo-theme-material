@@ -158,14 +158,11 @@
 >>>>>>> feat(ls): New localstorage cleanup mechanism
 
     <!-- Import CSS -->
-    <% if(theme.vendors.material_css) { %>
-        <%- cssLsload({path:(theme.vendors.material_css),key:'material_css'}) %>
+    <% if(theme.vendors.materialcdn) { %>
+        <%- cssLsload({path:(theme.vendors.materialcdn + '/css/material.min.css'),key:'material_css'}) %>
+        <%- cssLsload({path:(theme.vendors.materialcdn + '/css/style.min.css'),key:'style_css'}) %>
     <% } else { %>
         <%- cssLsload({path:(config.root + 'css/material.min.css'),key:'material_css'}) %>
-    <% } %>
-    <% if(theme.vendors.style_css) { %>
-        <%- cssLsload({path:(theme.vendors.style_css),key:'style_css'}) %>
-    <% } else { %>
         <%- cssLsload({path:(config.root + 'css/style.min.css'),key:'style_css'}) %>
     <% } %>
 
